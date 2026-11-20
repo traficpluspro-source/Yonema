@@ -1,0 +1,892 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="YONEMA, votre partenaire d'import-export, de transport et de livraison express entre l'Europe et l'Afrique.">
+<title>YONEMA | Import Export & Livraison Express</title>
+
+<style>
+:root {
+    --black: #101114;
+    --gold: #D6A342;
+    --orange: #F28C28;
+    --white: #ffffff;
+    --light: #f6f6f6;
+    --gray: #707070;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background: var(--black);
+    color: white;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px #0003;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--gold);
+}
+
+.logo span {
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.nav-button {
+    background: var(--gold);
+    color: var(--black);
+    padding: 11px 19px;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    color: white;
+    background:
+    linear-gradient(90deg, #08090de8 15%, #08090d99 65%, #08090d33),
+    url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=2000&q=85")
+    center/cover;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-tag {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    font-size: 18px;
+    color: #eeeeee;
+    max-width: 580px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: .3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    opacity: .9;
+}
+
+.section {
+    padding: 85px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title small {
+    color: var(--orange);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin: 10px 0;
+}
+
+.section-title p {
+    color: var(--gray);
+    max-width: 700px;
+    margin: auto;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.about-text h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--gray);
+    margin-bottom: 17px;
+}
+
+.about-text strong {
+    color: var(--black);
+}
+
+.partners {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.partner {
+    background: #f2f2f2;
+    border-left: 4px solid var(--gold);
+    padding: 13px 18px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.services {
+    background: var(--light);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px #0000000c;
+    transition: .3s;
+    border-bottom: 3px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.service-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.service-card p {
+    color: var(--gray);
+    font-size: 15px;
+}
+
+.delivery {
+    background: var(--black);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.delivery img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.delivery h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.delivery h2 span {
+    color: var(--gold);
+}
+
+.delivery p {
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.delivery-highlight {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #D6A34220;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+
+.step {
+    padding: 25px;
+}
+
+.step-number {
+    width: 65px;
+    height: 65px;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 20px;
+}
+
+.step p {
+    color: var(--gray);
+    margin-top: 10px;
+}
+
+.banner {
+    background:
+    linear-gradient(#101114dd, #101114dd),
+    url("https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+    padding: 90px 8%;
+    text-align: center;
+    color: white;
+}
+
+.banner h2 {
+    font-size: clamp(30px, 5vw, 45px);
+    margin-bottom: 15px;
+}
+
+.banner h2 span {
+    color: var(--gold);
+}
+
+.banner p {
+    margin-bottom: 25px;
+}
+
+.contact {
+    background: var(--light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 45px;
+}
+
+.contact-info h3 {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px #0000000c;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+footer {
+    background: #090a0c;
+    color: white;
+    padding: 45px 8% 20px;
+    text-align: center;
+}
+
+footer .logo {
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #aaa;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+footer .footer-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+footer a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 25px;
+}
+
+@media(max-width: 850px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: var(--black);
+        flex-direction: column;
+        padding: 25px;
+        gap: 22px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .about,
+    .delivery,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+}
+
+@media(max-width: 500px) {
+    .section {
+        padding: 60px 6%;
+    }
+
+    .hero {
+        padding: 65px 6%;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .about img,
+    .delivery img {
+        height: 280px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="#" class="logo">YONE<span>MA</span></a>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+
+    <nav id="navigation">
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">Qui sommes-nous ?</a>
+        <a href="#services">Nos services</a>
+        <a href="#livraison">Livraison</a>
+        <a href="#contact" class="nav-button">Nous contacter</a>
+    </nav>
+</header>
+
+<!-- ACCUEIL -->
+<section class="hero" id="accueil">
+    <div class="hero-content">
+
+        <div class="hero-tag">IMPORT • EXPORT • LIVRAISON</div>
+
+        <h1>
+            Vos colis.<br>
+            Vos achats.<br>
+            <span>Notre priorité.</span>
+        </h1>
+
+        <p>
+            De l'Europe à l'Afrique et de l'Afrique à l'Europe,
+            YONEMA rapproche vos destinations.
+            Commandez, envoyez, nous acheminons.
+        </p>
+
+        <div class="buttons">
+            <a href="#contact" class="btn btn-gold">Expédier un colis</a>
+            <a href="#services" class="btn btn-outline">Découvrir nos services</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- PRESENTATION -->
+<section class="section" id="apropos">
+
+    <div class="about">
+
+        <img
+        src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1100&q=85"
+        alt="Centre logistique et préparation des colis">
+
+        <div class="about-text">
+
+            <small style="color:#F28C28;font-weight:bold;letter-spacing:3px;">
+                QUI SOMMES-NOUS ?
+            </small>
+
+            <h2>YONEMA, la distance n'est plus un obstacle.</h2>
+
+            <p>
+                YONEMA est une plateforme de services spécialisée
+                dans l'import-export, l'acheminement de marchandises,
+                la collecte et la livraison de colis entre l'Europe
+                et l'Afrique.
+            </p>
+
+            <p>
+                Inspiré de l'expression wolof <strong>« Yónnee ma »</strong>,
+                qui signifie « Envoie-moi », notre concept repose
+                sur une idée simple : faciliter vos échanges et
+                vous permettre d'envoyer ou de recevoir vos achats
+                en toute simplicité.
+            </p>
+
+            <p>
+                YONEMA est une filiale de <strong>TRAFIC PLUS</strong>
+                et de <strong>SC CONSULTING</strong>, portée par une
+                vision commune : rapprocher les personnes, les
+                commerçants et les opportunités.
+            </p>
+
+            <div class="partners">
+                <div class="partner">TRAFIC PLUS</div>
+                <div class="partner">SC CONSULTING</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+
+    <div class="section-title">
+        <small>NOS SOLUTIONS</small>
+        <h2>Tout devient plus simple avec YONEMA</h2>
+        <p>
+            Des solutions adaptées aux particuliers,
+            aux commerçants et aux professionnels.
+        </p>
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <div class="service-icon">🛒</div>
+            <h3>Commandes internationales</h3>
+            <p>
+                Vous avez repéré un produit sur un site
+                commercial en France, en Europe ou au Sénégal ?
+                Nous vous accompagnons dans votre commande
+                et son acheminement.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📦</div>
+            <h3>Envoi de colis</h3>
+            <p>
+                Confiez-nous vos colis depuis la France
+                ou partout en Europe. Nous organisons leur
+                transport vers votre famille, vos proches
+                ou vos partenaires en Afrique.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">✈️</div>
+            <h3>Import & Export</h3>
+            <p>
+                Nous facilitons les échanges de marchandises
+                entre l'Europe et l'Afrique, dans les deux sens,
+                pour les particuliers et les professionnels.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LIVRAISON -->
+<section class="section delivery" id="livraison">
+
+    <div>
+        <h2>
+            L'Europe et l'Afrique,
+            <span>à portée de main.</span>
+        </h2>
+
+        <p>
+            Que vous soyez en France, en Belgique, en Espagne,
+            en Italie, en Allemagne ou ailleurs en Europe,
+            YONEMA vous accompagne pour faire parvenir vos colis
+            à destination en Afrique.
+        </p>
+
+        <p>
+            Vous êtes au Sénégal ou dans un autre pays africain ?
+            Contactez-nous pour organiser vos envois vers l'Europe.
+        </p>
+
+        <div class="delivery-highlight">
+            ⚡ Objectif : livraison en 24 heures
+        </div>
+
+        <br>
+
+        <a href="#contact" class="btn btn-gold">
+            Organiser mon expédition
+        </a>
+    </div>
+
+    <img
+    src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1100&q=85"
+    alt="Avion de transport international">
+
+</section>
+
+<!-- COMMENT CA MARCHE -->
+<section class="section">
+
+    <div class="section-title">
+        <small>COMMENT ÇA MARCHE ?</small>
+        <h2>Trois étapes, une seule destination.</h2>
+        <p>Nous simplifions vos expéditions du début à la fin.</p>
+    </div>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="step-number">01</div>
+            <h3>Vous nous contactez</h3>
+            <p>
+                Présentez votre commande, votre colis
+                et votre destination.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">02</div>
+            <h3>Nous organisons</h3>
+            <p>
+                Nous étudions votre demande et organisons
+                la prise en charge et le transport.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">03</div>
+            <h3>Vous recevez</h3>
+            <p>
+                Votre colis poursuit son acheminement
+                vers sa destination finale.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BANNIERE -->
+<section class="banner">
+
+    <h2>Vous demandez. <span>YONEMA achemine.</span></h2>
+
+    <p>
+        Un service de proximité, une vision internationale,
+        une seule ambition : vous rapprocher de vos destinations.
+    </p>
+
+    <a href="#contact" class="btn btn-gold">
+        Parlons de votre projet
+    </a>
+
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+
+    <div class="section-title">
+        <small>CONTACTEZ-NOUS</small>
+        <h2>Votre prochaine livraison commence ici.</h2>
+        <p>
+            Une commande à effectuer ? Un colis à envoyer ?
+            Parlons-en.
+        </p>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-info">
+
+            <h3>YONEMA est à votre écoute.</h3>
+
+            <p>
+                Nous accompagnons vos demandes d'expédition,
+                vos achats internationaux et vos projets
+                d'import-export.
+            </p>
+
+            <p>🌍 <strong>Zone de service :</strong><br>
+            Europe ↔ Afrique</p>
+
+            <p>⚡ <strong>Rapidité :</strong><br>
+            Objectif de livraison en 24 heures selon destination.</p>
+
+            <p>🤝 <strong>Engagement :</strong><br>
+            Fiabilité, transparence et accompagnement.</p>
+
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+            <input type="text" id="nom"
+            placeholder="Votre nom complet" required>
+
+            <input type="email" id="email"
+            placeholder="Votre adresse e-mail" required>
+
+            <input type="tel" id="telephone"
+            placeholder="Votre numéro de téléphone" required>
+
+            <select id="service" required>
+                <option value="">Quel service souhaitez-vous ?</option>
+                <option>Commande internationale</option>
+                <option>Envoi de colis Europe vers Afrique</option>
+                <option>Envoi de colis Afrique vers Europe</option>
+                <option>Import / Export</option>
+                <option>Autre demande</option>
+            </select>
+
+            <textarea id="message"
+            placeholder="Décrivez votre demande et votre destination..."
+            required></textarea>
+
+            <button type="submit" class="btn btn-gold">
+                Envoyer ma demande
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="logo">YONE<span>MA</span></div>
+
+    <p>IMPORT • EXPORT • TRANSPORT • LIVRAISON EXPRESS</p>
+
+    <p>L'Europe et l'Afrique, plus proches que jamais.</p>
+
+    <div class="footer-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="copyright">
+        <p>
+            © <span id="year"></span> YONEMA.
+            Tous droits réservés.
+        </p>
+        <p>Une filiale de TRAFIC PLUS & SC CONSULTING.</p>
+    </div>
+
+</footer>
+
+<script>
+
+// MENU MOBILE
+function toggleMenu() {
+    document.getElementById("navigation").classList.toggle("active");
+}
+
+// FERMER LE MENU APRÈS UN CLIC
+document.querySelectorAll("#navigation a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navigation").classList.remove("active");
+    });
+});
+
+// ANNÉE AUTOMATIQUE
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// FORMULAIRE WHATSAPP
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const nom = document.getElementById("nom").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telephone = document.getElementById("telephone").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    // REMPLACER PAR LE VRAI NUMÉRO WHATSAPP DE YONEMA
+    const numeroWhatsApp = "33752758690";
+
+    const texte =
+        "Bonjour YONEMA !\n\n" +
+        "Nom : " + nom + "\n" +
+        "Email : " + email + "\n" +
+        "Téléphone : " + telephone + "\n" +
+        "Service : " + service + "\n" +
+        "Demande : " + message;
+
+    const lien =
+        "https://wa.me/" + numeroWhatsApp +
+        "?text=" + encodeURIComponent(texte);
+
+    window.open(lien, "_blank");
+
+});
+
+</script>
+
+</body>
+</html>
